@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ToDo List</title>
+	
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+	<h1>Список задач</h1>
+	<div id="app2">
+		<input class="new-task-input" v-model="newTask" type="text" name="">&nbsp;&nbsp;<button class="add-task-button" v-on:click="addTask()">Добавить</button>
+ 
+		<div class="task-item" v-for="task, i in tasks">
+			{{ task }}
+			<div class="task-buttons">
+                <img src="img/pen.svg" v-on:click="editTask(i)"></img>
+                <img src="img/trash.svg" v-on:click="deleteTask(i)"></img>
+            </div>
+           
+		</div>
+	</div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="js/main.js"></script>
+	
+</body>
+</html>
