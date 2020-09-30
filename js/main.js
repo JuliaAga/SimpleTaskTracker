@@ -15,7 +15,8 @@ var app = new Vue({
             Vue.set(this.tasks, i, newTask);
         },
         deleteTask: function(i){
-            this.tasks.splice(i, 1);
+            if(confirm("Удалить?"))
+            {this.tasks.splice(i, 1);}
         }
     }
 });
